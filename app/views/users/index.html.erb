@@ -1,0 +1,21 @@
+<p><strong><%= link_to("Home", controller: "welcome") %></strong></p>
+<h1>Bingo Users</h1>
+<% text = (@users.size == 1) ? "1 User currently exists" : "#{@users.size} Users currently exist" %>
+<p><strong><%= text %> in the system.</strong></p>
+<% if @users.present? %>
+  <!-- TABLES ARE EVIL  ...  USE CSS, DUMMY!! -->
+  <table border="1" cellspacing="0" cellpadding="7">
+    <tr>
+      <th align="left">ID</th>
+      <th align="left">Email</th>
+      <th align="left">Screen Name</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td align="left"><%= user.id %></td>
+        <td align="left"><%= user.email %></td>
+        <td align="left"><%= user.screen_name %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
