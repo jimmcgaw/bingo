@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: bhcastle@gmail.com
+  screen_name: The Creator
+
+two:
+  email: bhcastle@github.com
+  screen_name: KittyKat

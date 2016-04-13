@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
+  # TODO - is there any need for a separate login/signin/authentication controller?
+  # TODO - maybe have an authentication class as a concern?
+  post  "login"           => "users#login"
+  get   "reset_password"  => "users#reset_password"
+
   resources :users do
     member do
-      # TODO - is there any need for a separate login/signin/authentication controller?
-      # TODO - maybe have an authentication class as a concern?
-      post 'signin'
-      get 'reset_password'
     end
 
     collection do

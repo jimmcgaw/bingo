@@ -18,5 +18,5 @@ A customizable, interactive, web-enabled Bingo game.
  * add a RESTful API to return JSON (as opposed to using ERB template views)
  * create SPAs using a JS framework like AngularJS or React or Ember... and probably use TypeScript
   * SPAs will be bootstrapped with a Rails controller and view, but interact with the API
- * create a new repo with a moble app using this API
+ * create a new repo with a mobile app using this API
  * add i18n and l10n (maybe)
