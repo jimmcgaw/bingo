@@ -12,6 +12,13 @@ A customizable, interactive, web-enabled Bingo game.
  * use the latest Ruby and Rails versions
  * incorporate authentication and authorization
 
+## Assets
+Modify styles for the UI in app/assets/stylesheets. Bootstrap with SASS has been included for styling the UI for convenience.
+
+To build the assets after a change to the SCSS files, run:
+
+`$ rake assets:precompile`
+
 ## Goals for future improvements and fun
  * use containers
  * incorporate RSpec (just because it's popular, not because it's necessarily needed)

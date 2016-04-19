@@ -2,24 +2,32 @@
 
 <p><strong><%= link_to("View All Users", controller: "users") %></strong></p>
 
-<br/>
-<br/>
+<div class="auth login">
+  <h3>Login</h3>
+  <%= form_tag(login_path, method: "post") do %>
+    <fieldset class="form-group">
+      <%= label_tag(:email, "Email:", for: 'email') %>
+      <%= email_field_tag :email, '', class: 'form-control', required: 'required' %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= button_tag("Login!", class: 'btn btn-primary', role: 'button')  %>
+    </fieldset>
+  <% end %>
+</div>
 
-<h3>Login</h3>
-<%= form_tag(login_path, method: "post") do %>
-  <%= label_tag(:email, "Email:") %> &nbsp;
-  <%= text_field_tag(:email) %>  &nbsp; &nbsp;
-  <%= submit_tag("Login!") %>
-<% end %>
-
-<br/>
-<br/>
-
-<h3>Register</h3>
-<%= form_for(:user, url: users_path) do |f| %>
-  <%= label_tag(:email, "Email:") %> &nbsp;
-  <%= f.text_field :email %> &nbsp; &nbsp;
-  <%= label_tag(:screen_name, "Screen Name:") %> &nbsp;
-  <%= f.text_field :screen_name %>  &nbsp; &nbsp;
-  <%= f.submit "Create!" %>
-<% end %>
+<div class="auth register">
+  <h3>Register</h3>
+  <%= form_for(:user, url: users_path) do |f| %>
+    <fieldset class="form-group">
+      <%= label_tag(:email, "Email:", for: 'user_email') %>
+      <%= f.email_field :email, class: 'form-control', required: 'required' %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= label_tag(:screen_name, "Screen Name:", for: 'user_screen_name') %>
+      <%= f.text_field :screen_name, class: 'form-control', required: 'required' %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= f.button "Create!", class: 'btn btn-primary', role: 'button' %>
+    </fieldset>
+  <% end %>
+</div>
